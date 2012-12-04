@@ -1,0 +1,4 @@
+AutoFixtureTS
+=============
+
+AutoFixture for TypeScript
