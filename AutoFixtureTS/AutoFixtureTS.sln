@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFixtureTS", "\\vasfs01.widex.org\usv$\rhe\Documents\Visual Studio 2012\Projects\RoyKata\AutoFixture\AutoFixtureTS.csproj", "{85214386-C7D6-4445-AE92-8908EBF8862E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E3320142-47B2-4FE7-AAE2-F066B9407739}"
+	ProjectSection(SolutionItems) = preProject
+		WE-settings.xml = WE-settings.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85214386-C7D6-4445-AE92-8908EBF8862E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85214386-C7D6-4445-AE92-8908EBF8862E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85214386-C7D6-4445-AE92-8908EBF8862E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85214386-C7D6-4445-AE92-8908EBF8862E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
