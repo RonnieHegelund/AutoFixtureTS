@@ -11,12 +11,12 @@ module AutofixtureTS
         private _max = 100;
         
         constructor (min?: number, max?: number) {
-            this._max = max;
-            this._min = min;
+            this._max = max-1;
+            this._min = min+1;
         }
 
         public CreateAnonymous(): number {            
-            return Math.floor(Math.random() * (this._max - this._min + 1)) + this._min;
+            return Math.floor(Math.random() * (this._max - this._min)) + this._min;
         }
 
         public Create(request: Object): Object

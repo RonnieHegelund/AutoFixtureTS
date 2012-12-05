@@ -7,7 +7,8 @@ var Types;
         }
         Guid.prototype.ToString = function () {
             return this.guid;
-        };
+        }// Static member
+        ;
         Guid.MakeNew = function MakeNew() {
             var result;
             var i;

@@ -1,7 +1,9 @@
-var Autofixture;
-(function (Autofixture) {
+var AutofixtureTS;
+(function (AutofixtureTS) {
     (function (Kernel) {
+        // Class
         var NoSpecimen = (function () {
+            // Constructor
             function NoSpecimen(request) {
                 this._request = request;
             }
@@ -11,6 +13,6 @@ var Autofixture;
             return NoSpecimen;
         })();
         Kernel.NoSpecimen = NoSpecimen;        
-    })(Autofixture.Kernel || (Autofixture.Kernel = {}));
-    var Kernel = Autofixture.Kernel;
-})(Autofixture || (Autofixture = {}));
+    })(AutofixtureTS.Kernel || (AutofixtureTS.Kernel = {}));
+    var Kernel = AutofixtureTS.Kernel;
+})(AutofixtureTS || (AutofixtureTS = {}));

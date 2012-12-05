@@ -20,7 +20,7 @@ class Person {
     }
 }
 
-describe("Fixture", () => {
+describe("AutofixtureTS.Fixture", () => {
     it("can create CreateAnonymous Person ", () =>{
         var sut = new AutofixtureTS.Fixture();        
         var expected = <Person>sut.CreateAnonymous(Person);        

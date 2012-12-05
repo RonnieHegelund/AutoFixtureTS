@@ -1,5 +1,8 @@
-var Autofixture;
-(function (Autofixture) {
+/// <reference path="Kernel/NoSpecimen.ts" />
+/// <reference path="Kernel/ISpecimenBuilder.ts" />
+var AutofixtureTS;
+(function (AutofixtureTS) {
+    // Class
     var BooleanSwitch = (function () {
         function BooleanSwitch() {
             this.b = false;
@@ -10,11 +13,11 @@ var Autofixture;
         };
         BooleanSwitch.prototype.Create = function (request) {
             if(typeof request != "boolean") {
-                return new Autofixture.Kernel.NoSpecimen(request);
+                return new AutofixtureTS.Kernel.NoSpecimen(request);
             }
             return this.CreateAnonymous();
         };
         return BooleanSwitch;
     })();
-    Autofixture.BooleanSwitch = BooleanSwitch;    
-})(Autofixture || (Autofixture = {}));
+    AutofixtureTS.BooleanSwitch = BooleanSwitch;    
+})(AutofixtureTS || (AutofixtureTS = {}));

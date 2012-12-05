@@ -3,7 +3,7 @@
 /// <reference path="jasmine-1.2.d.ts" />
 
 module AutofixtureTSUnitTest {
-    describe("StringGenerator", () => {
+    describe("AutofixtureTS.StringGenerator", () => {
         
         it("can create Anonymous string ", () =>{
             var sut = new AutofixtureTS.StringGenerator();

@@ -1,5 +1,9 @@
+/// <reference path="BaseTypes/Guid.ts" />
+/// <reference path="Kernel/NoSpecimen.ts" />
+/// <reference path="Kernel/ISpecimenBuilder.ts" />
 var AutofixtureTS;
 (function (AutofixtureTS) {
+    // Class
     var StringGenerator = (function () {
         function StringGenerator() {
         }

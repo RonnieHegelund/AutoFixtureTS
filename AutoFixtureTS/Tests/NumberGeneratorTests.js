@@ -1,6 +1,9 @@
+/// <reference path="../NumberGenerator.ts" />
+/// <reference path="../Kernel/ISpecimenBuilder.ts" />
+/// <reference path="jasmine-1.2.d.ts" />
 var AutofixtureTSUnitTest;
 (function (AutofixtureTSUnitTest) {
-    describe("NumberGenerator", function () {
+    describe("AutofixtureTS.NumberGenerator", function () {
         it("can create Anonymous number ", function () {
             var sut = new AutofixtureTS.NumberGenerator();
             var expected = sut.CreateAnonymous();

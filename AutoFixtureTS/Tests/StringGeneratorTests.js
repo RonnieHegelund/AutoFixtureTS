@@ -1,6 +1,9 @@
+/// <reference path="../StringGenerator.ts" />
+/// <reference path="../Kernel/ISpecimenBuilder.ts" />
+/// <reference path="jasmine-1.2.d.ts" />
 var AutofixtureTSUnitTest;
 (function (AutofixtureTSUnitTest) {
-    describe("StringGenerator", function () {
+    describe("AutofixtureTS.StringGenerator", function () {
         it("can create Anonymous string ", function () {
             var sut = new AutofixtureTS.StringGenerator();
             var expected = sut.CreateAnonymous();

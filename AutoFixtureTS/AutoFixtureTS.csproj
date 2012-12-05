@@ -42,125 +42,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BaseTypes\Guid.js">
-      <DependentUpon>Guid.ts</DependentUpon>
-    </Content>
-    <Content Include="BaseTypes\Guid.min.js">
-      <DependentUpon>Guid.ts</DependentUpon>
-    </Content>
-    <Content Include="BooleanSwitch.js">
-      <DependentUpon>BooleanSwitch.ts</DependentUpon>
-    </Content>
-    <Content Include="BooleanSwitch.min.js">
-      <DependentUpon>BooleanSwitch.ts</DependentUpon>
-    </Content>
-    <Content Include="Tests\StringGeneratorTests.js">
-      <DependentUpon>StringGeneratorTests.ts</DependentUpon>
-    </Content>
-    <Content Include="Tests\StringGeneratorTests.min.js">
-      <DependentUpon>StringGeneratorTests.ts</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="Tests\StringGeneratorTests.ts" />
     <TypeScriptCompile Include="DefaultPrimitiveBuilders.ts" />
-    <Content Include="DefaultPrimitiveBuilders.js">
-      <DependentUpon>DefaultPrimitiveBuilders.ts</DependentUpon>
-    </Content>
-    <Content Include="DefaultPrimitiveBuilders.min.js">
-      <DependentUpon>DefaultPrimitiveBuilders.ts</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="NumberGenerator.ts" />
-    <Content Include="NumberGenerator.js">
-      <DependentUpon>NumberGenerator.ts</DependentUpon>
-    </Content>
-    <Content Include="NumberGenerator.min.js">
-      <DependentUpon>NumberGenerator.ts</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="StringGenerator.ts" />
-    <Content Include="StringGenerator.js">
-      <DependentUpon>StringGenerator.ts</DependentUpon>
-    </Content>
-    <Content Include="StringGenerator.min.js">
-      <DependentUpon>StringGenerator.ts</DependentUpon>
-    </Content>
-    <Content Include="Tests\BooleanSwitchTest.js">
-      <DependentUpon>BooleanSwitchTest.ts</DependentUpon>
-    </Content>
-    <Content Include="Tests\BooleanSwitchTest.min.js">
-      <DependentUpon>BooleanSwitchTest.ts</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="Tests\BooleanSwitchTest.ts" />
     <TypeScriptCompile Include="BooleanSwitch.ts" />
-    <Content Include="Kernel\NoSpecimen.js">
-      <DependentUpon>NoSpecimen.ts</DependentUpon>
-    </Content>
-    <Content Include="Kernel\NoSpecimen.min.js">
-      <DependentUpon>NoSpecimen.ts</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="Kernel\NoSpecimen.ts" />
-    <Content Include="Kernel\ISpecimenBuilder.js">
-      <DependentUpon>ISpecimenBuilder.ts</DependentUpon>
-    </Content>
-    <Content Include="Kernel\ISpecimenBuilder.min.js">
-      <DependentUpon>ISpecimenBuilder.ts</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="Kernel\ISpecimenBuilder.ts" />
     <TypeScriptCompile Include="BaseTypes\Guid.ts" />
-    <Content Include="Fixture.js">
-      <DependentUpon>Fixture.ts</DependentUpon>
-    </Content>
-    <Content Include="Fixture.min.js">
-      <DependentUpon>Fixture.ts</DependentUpon>
-    </Content>
-    <Content Include="IFixture.js">
-      <DependentUpon>IFixture.ts</DependentUpon>
-    </Content>
-    <Content Include="IFixture.min.js">
-      <DependentUpon>IFixture.ts</DependentUpon>
-    </Content>
-    <Content Include="Tests\FixtureTest.min.js">
-      <DependentUpon>FixtureTest.ts</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="IFixture.ts" />
-    <Content Include="Tests\FixtureTest.js">
-      <DependentUpon>FixtureTest.ts</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="Tests\FixtureTest.ts" />
     <TypeScriptCompile Include="Fixture.ts" />
     <Content Include="Tests\jasmine-1.2.d.ts" />
     <TypeScriptCompile Include="Tests\NumberGeneratorTests.ts" />
-    <Content Include="Tests\NumberGeneratorTests.js">
-      <DependentUpon>NumberGeneratorTests.ts</DependentUpon>
-    </Content>
-    <Content Include="Tests\NumberGeneratorTests.min.js">
-      <DependentUpon>NumberGeneratorTests.ts</DependentUpon>
-    </Content>
+    <TypeScriptCompile Include="Tests\NoSpecimenTests.ts" />
     <Content Include="Tests\qunit-1.10.d.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="BaseTypes\Guid.js.map">
-      <DependentUpon>Guid.ts</DependentUpon>
-    </None>
-    <None Include="BooleanSwitch.js.map">
-      <DependentUpon>BooleanSwitch.ts</DependentUpon>
-    </None>
-    <None Include="Fixture.js.map">
-      <DependentUpon>Fixture.ts</DependentUpon>
-    </None>
-    <None Include="IFixture.js.map">
-      <DependentUpon>IFixture.ts</DependentUpon>
-    </None>
-    <None Include="Kernel\ISpecimenBuilder.js.map">
-      <DependentUpon>ISpecimenBuilder.ts</DependentUpon>
-    </None>
-    <None Include="Kernel\NoSpecimen.js.map">
-      <DependentUpon>NoSpecimen.ts</DependentUpon>
-    </None>
-    <None Include="Tests\BooleanSwitchTest.js.map">
-      <DependentUpon>BooleanSwitchTest.ts</DependentUpon>
-    </None>
-    <None Include="Tests\FixtureTest.js.map">
-      <DependentUpon>FixtureTest.ts</DependentUpon>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

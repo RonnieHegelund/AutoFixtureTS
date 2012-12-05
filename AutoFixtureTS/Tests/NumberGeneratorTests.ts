@@ -4,7 +4,7 @@
 
 module AutofixtureTSUnitTest {
     
-    describe("NumberGenerator", ()=> {
+    describe("AutofixtureTS.NumberGenerator", ()=> {
 
         it("can create Anonymous number ", () =>{
             var sut = new AutofixtureTS.NumberGenerator();
