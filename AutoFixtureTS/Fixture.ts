@@ -1,91 +1,47 @@
-/// <reference path="StringGenerator.ts" />
-/// <reference path="NumberGenerator.ts" />
-/// <reference path="BooleanSwitch.ts" />
-/// <reference path="BaseTypes/Guid.ts" />
-
-interface IFixture {
-    CreateAnonymous(type : any): any;
-    CreateMany(type: any): any[];
-    CreateString(): string;
-    CreateNumber(): number;
-    CreateNumberRange(min: number, max: number): number;
-    CreateBoolean(): bool;    
-}
+/// <reference path="IFixture.ts" />
+/// <reference path="DefaultPrimitiveBuilders.ts" />
+/// <reference path="Kernel/CompositeSpecimenBuilder.ts" />
+/// <reference path="SpecimenFactory.ts" />
+/// <reference path="Kernel/ISpecimenBuilder.ts" />
 
 module AutofixtureTS 
 {
-    export class Fixture implements IFixture {
-        constructor () { };
-                                       
-        CreateAnonymous(type: any,min?:number,max?:number): any {
-            
-            if (typeof type == "string") {                
-                return new AutofixtureTS.StringGenerator().CreateAnonymous();
+    export class Fixture implements AutofixtureTS.IFixture {
+        private _specimenFactory: AutofixtureTS.SpecimenFactory;
+        private _customizer : AutofixtureTS.Kernel.CompositeSpecimenBuilder;
+        private _repeatCount = 10;
+        private _engine: AutofixtureTS.Kernel.ISpecimenBuilder;
+                                        
+        constructor (engine? : AutofixtureTS.Kernel.ISpecimenBuilder) 
+        { 
+            var defaultPrimitiveBuilders = new AutofixtureTS.DefaultPrimitiveBuilders();
+            this._customizer = new AutofixtureTS.Kernel.CompositeSpecimenBuilder(defaultPrimitiveBuilders.GetSpecimens());
+            if (engine != null) {
+                this._engine = engine;
+                this._customizer.Builders().push(engine);
             }
-            if (typeof type == "number") {                
-                return new AutofixtureTS.NumberGenerator(min,max).CreateAnonymous();
-            }
-            if (typeof type == "boolean") {                
-                return new AutofixtureTS.BooleanSwitch().CreateAnonymous();
-            }
+        
+            this._specimenFactory = new AutofixtureTS.SpecimenFactory(this._customizer);
+        };
 
-            var tmp = new type();
-            
-
-            if (typeof tmp == "object" && tmp instanceof String) {                
-                return new AutofixtureTS.StringGenerator().CreateAnonymous();
-            }
-
-            if (typeof tmp == "object" && tmp instanceof Number) {
-                return new AutofixtureTS.NumberGenerator(min,max).CreateAnonymous();
-            }
-
-            if (typeof tmp == "object" && tmp instanceof Boolean) {
-                return new AutofixtureTS.BooleanSwitch().CreateAnonymous();
-            }
-            
-            var t = new type;                        
-
-            Object.keys(t).forEach(val => {
+        public RepeatCount(value : number) : void {
+            this._repeatCount = value;
+            this._specimenFactory.RepeatCount(value);
+        }
+        
+        public Engine(): AutofixtureTS.Kernel.ISpecimenBuilder { return this._engine; }
                 
-                if(typeof t[val] == "string")
-                    t[val] = new AutofixtureTS.StringGenerator().CreateAnonymous();
-                if(typeof t[val] == "number")
-                    t[val] = new AutofixtureTS.NumberGenerator(min,max).CreateAnonymous();
-                if(typeof t[val] == "boolean")
-                    t[val] = new AutofixtureTS.BooleanSwitch().CreateAnonymous();
-                if (typeof t[val] == "object" && t[val] instanceof Array) {
-                    
-                }                    
-            });            
-            return t;
+        public Customizations() : AutofixtureTS.Kernel.ISpecimenBuilder[] {
+            return this._customizer.Builders();
+        }
+                                       
+        public CreateAnonymous(type: any): any {
+            return this._specimenFactory.CreateAnonymous(type);
         }
 
-        CreateMany(type: any) : any[] {
-            var arr = new any[];
-            for (var i = 0; i < 10;i++)
-            {
-                arr.push(this.CreateAnonymous(type));
-            }                        
-            return arr;
+        public CreateMany(type: any) : any[] {
+            return this._specimenFactory.CreateMany(type);
         }
-
-        CreateNumber(): number {
-            return this.CreateNumberRange(1, 100);
-        }
-
-        CreateNumberRange(min: number, max: number): number
-        {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
-        CreateString(key ? : string): string {
-            return new AutofixtureTS.StringGenerator().CreateAnonymous(key);
-        }
-
-        CreateBoolean(): bool {
-            return new AutofixtureTS.BooleanSwitch().CreateAnonymous();
-        }        
     }
 }
 

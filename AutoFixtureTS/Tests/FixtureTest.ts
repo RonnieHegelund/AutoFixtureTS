@@ -1,170 +1,189 @@
+/// <reference path="LoopTest.ts" />
+/// <reference path="kernel/DelegatingSpecimenBuilder.ts" />
 /// <reference path="../Fixture.ts" />
 /// <reference path="jasmine-1.2.d.ts" />
-class Person {
-    private firstname = "";
-    private lastName = "";
-    public Age = 0;
-    public Male = true;    
 
-    public GetFullName() : string
-    {
-        return this.firstname + " " + this.lastName;
-    }
-
-    public SetFirstname(val:string) {
-        this.firstname = val;
-    }
-
-    public SetLastname(val:string) {
-        this.lastName = val;
-    }
-}
 
 describe("AutofixtureTS.Fixture", () => {
-    it("can create CreateAnonymous Person ", () =>{
-        var sut = new AutofixtureTS.Fixture();        
-        var expected = <Person>sut.CreateAnonymous(Person);        
-        expected.SetFirstname("Ronnie");
-        expected.SetLastname("Hegelund");
-                
-        expect(expected.GetFullName()).toBe("Ronnie Hegelund");                
-    });
-    
-    it("can create many Anonymous Persons ", () =>{
-        var sut = new AutofixtureTS.Fixture();        
-        var expected = <Person[]> sut.CreateMany(Person);        
-        expect(expected.length).toBe(10);
-        expected.forEach(p => {
-                p.SetFirstname("Ronnie");
-                p.SetLastname("Hegelund");
-            }
-        );
-        expected.forEach(p => expect(p.GetFullName()).toBe("Ronnie Hegelund"));        
+
+    it("Initialized With Engine Sut Has Correct Engine", () =>{        
+    // Fixture setup        
+        var expectedEngine = new AutofixtureTSUnitTest.Kernel.DelegatingSpecimenBuilder();
+        var sut = new AutofixtureTS.Fixture(expectedEngine);        
+        // Exercise system                
+        var result = sut.Engine();
+        // Verify outcome
+        expect(result).toBe(expectedEngine);
+        // Teardown
     });
 
-    it("can create many strings", () =>{
-        var sut = new AutofixtureTS.Fixture();        
-        var expected = <string[]> sut.CreateMany("");        
-        expect(expected.length).toBe(10);
-        
-        expected.forEach(p => expect(p).toBeDefined());        
+
+    it("CreateMany items.length to be equals RepeatCount", () =>{        
+        // Fixture setup        
+        var expectedRepeatCount = 187;
+        var dummyBuilder = new AutofixtureTSUnitTest.Kernel.DelegatingSpecimenBuilder();
+        var sut = new AutofixtureTS.Fixture(dummyBuilder);
+        sut.RepeatCount(expectedRepeatCount)        
+        // Exercise system                
+        var result = sut.CreateMany(0).length;
+        // Verify outcome
+        expect(result).toBe(expectedRepeatCount);
+        // Teardown
     });
 
-    it("can create many numbers", () =>{
-        var sut = new AutofixtureTS.Fixture();        
-        var expected = <number[]> sut.CreateMany(0);        
-        expect(expected.length).toBe(10);
-        
-        expected.forEach(p => expect(p).toBeDefined());        
-    });
-    
-    it("can create many booleans", () =>{
-        var sut = new AutofixtureTS.Fixture();        
-        var expected = <bool[]> sut.CreateMany(true);        
-        expect(expected.length).toBe(10);        
-        expected.forEach(p => expect(p).toBeDefined());        
-    });
-
-    it("can create many Dates", () =>{
-        var sut = new AutofixtureTS.Fixture();        
-        var expected = <Date[]> sut.CreateMany(Date);        
-        expect(expected.length).toBe(10);        
-        expected.forEach(p => expect(p).toBeDefined());        
-    });
-
-    it("can create defaultstring ", () =>{
-        var sut = new AutofixtureTS.Fixture();        
-        var expected = sut.CreateString();
-        var regex = "^(\{){0,1}[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}(\}){0,1}$";
-    
-        expect(expected.match(regex).length).not.toBeNull();
-    });
-    
-    it("can create string with identifier ", () =>{
+    it("Customizations Is Instance", () =>{        
+        // Fixture setup        
         var sut = new AutofixtureTS.Fixture();
-        
-        var expected = sut.CreateString("tester");                
-        var regex = "^(tester_)(\{){0,1}[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}(\}){0,1}$";
+        // Exercise system                
+        var result = sut.Customizations();
+        // Verify outcome
+        expect(result).not.toBeNull();
+        // Teardown
+    }); 
+
+    it("Customizations Is Stable", () =>{        
+        // Fixture setup        
+        var sut = new AutofixtureTS.Fixture();
+        var builder = new AutofixtureTSUnitTest.Kernel.DelegatingSpecimenBuilder();
+        // Exercise system                
+        sut.Customizations().push(builder);
+        // Verify outcome
+        expect(sut.Customizations().some((item) => item === builder)).toBeTruthy();
+        // Teardown
+    }); 
+
+    it("Create Anonymous Will Create Simple Object", () =>{        
+        // Fixture setup        
+        var sut = new AutofixtureTS.Fixture();        
+        // Exercise system                
+        var result = sut.CreateAnonymous(Object);
+        // Verify outcome
+        expect(result).not.toBeNull();
+        // Teardown
+    });
+
+    it("Create Anonymous String Will Prefix Name", () =>{        
+        // Fixture setup
+        var expectedText = "Anonymous text";        
+        var sut = new AutofixtureTS.Fixture();        
+        // Exercise system                
+        var result = sut.CreateAnonymous(expectedText);
+        // Verify outcome
+        expect(result).toContain(expectedText);
+        // Teardown
+    });
+
     
-        expect(expected.match(regex).length).not.toBeNull();
-    });
-
-    it("can create Anonymous string ", () =>{
-        var sut = new AutofixtureTS.Fixture();
-
-        var expected = sut.CreateAnonymous(String);
-        var regex = "^(\{){0,1}[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}(\}){0,1}$";
-
-        expect(expected.match(regex).length).not.toBeNull();
-    });
-
-    it("can create Anonymous string by empty string", () =>{
-        var sut = new AutofixtureTS.Fixture();
-
+    it("Create Anonymous with empty string will return guid string ", () =>{
+        var sut = new AutofixtureTS.Fixture();        
         var expected = sut.CreateAnonymous("");
         var regex = "^(\{){0,1}[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}(\}){0,1}$";
-
-        expect(expected.match(regex).length).not.toBeNull();
-    });
-
-    it("can create boolean ", () =>{
-        var sut = new AutofixtureTS.Fixture();        
-        var expected = sut.CreateBoolean();            
-        expect(typeof(expected)).toBe("boolean");
+    
+        expect(expected).toMatch(regex);
     });
     
-    it("can create Anonymous boolean by true value ", () =>{
-        var sut = new AutofixtureTS.Fixture();        
-        var expected = sut.CreateAnonymous(true);            
-        expect(typeof(expected)).toBe("boolean");
+   
+    it("Create Anonymous with string object will return guid string  ", () =>{
+        var sut = new AutofixtureTS.Fixture();
+
+        var expected = sut.CreateAnonymous(String());
+        var regex = "^(\{){0,1}[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}(\}){0,1}$";
+
+        expect(expected).toMatch(regex);
     });
 
-    it("can create number ", () =>{
+    it("Create Anonymous boolean Will true on first call", () =>{        
+        // Fixture setup        
         var sut = new AutofixtureTS.Fixture();        
-        var expected = sut.CreateNumber();            
-        expect(typeof(expected)).toBe("number");
+        // Exercise system                
+        var result = sut.CreateAnonymous(true);
+        // Verify outcome
+        expect(result).toBeTruthy()
+        // Teardown
     });
 
-    it("can create Anonymous number by number value ", () =>{
+    it("Create Anonymous boolean Will false on second call", () =>{        
+        // Fixture setup        
         var sut = new AutofixtureTS.Fixture();        
-        var expected = sut.CreateAnonymous(100);            
-        expect(typeof(expected)).toBe("number");
+        // Exercise system                
+        var result = new AutofixtureTSUnitTest.LoopTest(() => sut.CreateAnonymous(true) ).Execute(2);
+        // Verify outcome
+        expect(result).toBeFalsy()
+        // Teardown
     });
 
-    it("can create negative numbers from range", () =>{
+        it("Create Anonymous boolean object Will true on first call", () =>{        
+        // Fixture setup        
         var sut = new AutofixtureTS.Fixture();        
-        var expected = sut.CreateNumberRange(0,-100);            
-        expect(expected).toBeLessThan(0);
-        expect(expected).toBeGreaterThan(-100);
+        // Exercise system                
+        var result = sut.CreateAnonymous(Boolean());
+        // Verify outcome
+        expect(result).toBeTruthy()
+        // Teardown
     });
 
-    it("can create positive numbers from range", () =>{
+    it("Create Anonymous boolean object Will false on second call", () =>{        
+        // Fixture setup        
         var sut = new AutofixtureTS.Fixture();        
-        var expected = sut.CreateNumberRange(0,100);            
-        expect(expected).toBeLessThan(100);
-        expect(expected).toBeGreaterThan(0);
+        // Exercise system                
+        var result = new AutofixtureTSUnitTest.LoopTest(() => sut.CreateAnonymous(Boolean()) ).Execute(2);
+        // Verify outcome
+        expect(result).toBeFalsy()
+        // Teardown
     });
 
-    it("can create number Anonymous", () =>{
+     it("Create Anonymous boolean Will true on first call", () =>{        
+        // Fixture setup        
         var sut = new AutofixtureTS.Fixture();        
-        var expected = sut.CreateAnonymous(Number);            
-        expect(typeof(expected)).toBe("number");
+        // Exercise system                
+        var result = sut.CreateAnonymous(true);
+        // Verify outcome
+        expect(result).toBeTruthy()
+        // Teardown
     });
 
-    it("can create negative Anonymous numbers from range", () =>{
+    it("Create Anonymous number Will return 1 on first call", () =>{        
+        // Fixture setup        
         var sut = new AutofixtureTS.Fixture();        
-        var expected = sut.CreateAnonymous(Number, 0,-100); 
-        expect(expected).toBeLessThan(0);
-        expect(expected).toBeGreaterThan(-100);
+        // Exercise system                
+        var result = sut.CreateAnonymous(0);
+        // Verify outcome
+        expect(result).toBe(1)
+        // Teardown
     });
 
-    it("can create positive Anonymous numbers from range", () =>{
+    it("Create Anonymous number Will return 2 on second call", () =>{        
+        // Fixture setup        
         var sut = new AutofixtureTS.Fixture();        
-        var expected = sut.CreateAnonymous(Number,0,100);            
-        expect(expected).toBeLessThan(100);
-        expect(expected).toBeGreaterThan(0);
+        // Exercise system                
+        var result = new AutofixtureTSUnitTest.LoopTest(() => sut.CreateAnonymous(0) ).Execute(2);
+        // Verify outcome
+        expect(result).toBe(2)
+        // Teardown
     });
-    
+
+    it("Create Anonymous number object Will return 1 on first call", () =>{        
+        // Fixture setup        
+        var sut = new AutofixtureTS.Fixture();        
+        // Exercise system                
+        var result = sut.CreateAnonymous(Number());
+        // Verify outcome
+        expect(result).toBe(1)
+        // Teardown
+    });
+
+    it("Create Anonymous number object Will return 2 on second call", () =>{        
+        // Fixture setup        
+        var sut = new AutofixtureTS.Fixture();        
+        // Exercise system                
+        var result = new AutofixtureTSUnitTest.LoopTest(() => sut.CreateAnonymous(Number()) ).Execute(2);
+        // Verify outcome
+        expect(result).toBe(2)
+        // Teardown
+    });
+
+
+
 });
 
 

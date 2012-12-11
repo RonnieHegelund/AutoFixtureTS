@@ -1,62 +1,36 @@
+/// <reference path="IFixture.ts" />
+/// <reference path="DefaultPrimitiveBuilders.ts" />
+/// <reference path="Kernel/CompositeSpecimenBuilder.ts" />
+/// <reference path="SpecimenFactory.ts" />
+/// <reference path="Kernel/ISpecimenBuilder.ts" />
 var AutofixtureTS;
 (function (AutofixtureTS) {
     var Fixture = (function () {
-        function Fixture() {
+        function Fixture(engine) {
+            this._repeatCount = 10;
+            var defaultPrimitiveBuilders = new AutofixtureTS.DefaultPrimitiveBuilders();
+            this._customizer = new AutofixtureTS.Kernel.CompositeSpecimenBuilder(defaultPrimitiveBuilders.GetSpecimens());
+            if(engine != null) {
+                this._engine = engine;
+                this._customizer.Builders().push(engine);
+            }
+            this._specimenFactory = new AutofixtureTS.SpecimenFactory(this._customizer);
         }
-        Fixture.prototype.CreateAnonymous = function (type, min, max) {
-            if(typeof type == "string") {
-                return new AutofixtureTS.StringGenerator().CreateAnonymous();
-            }
-            if(typeof type == "number") {
-                return new AutofixtureTS.NumberGenerator(min, max).CreateAnonymous();
-            }
-            if(typeof type == "boolean") {
-                return new AutofixtureTS.BooleanSwitch().CreateAnonymous();
-            }
-            var tmp = new type();
-            if(typeof tmp == "object" && tmp instanceof String) {
-                return new AutofixtureTS.StringGenerator().CreateAnonymous();
-            }
-            if(typeof tmp == "object" && tmp instanceof Number) {
-                return new AutofixtureTS.NumberGenerator(min, max).CreateAnonymous();
-            }
-            if(typeof tmp == "object" && tmp instanceof Boolean) {
-                return new AutofixtureTS.BooleanSwitch().CreateAnonymous();
-            }
-            var t = new type();
-            Object.keys(t).forEach(function (val) {
-                if(typeof t[val] == "string") {
-                    t[val] = new AutofixtureTS.StringGenerator().CreateAnonymous();
-                }
-                if(typeof t[val] == "number") {
-                    t[val] = new AutofixtureTS.NumberGenerator(min, max).CreateAnonymous();
-                }
-                if(typeof t[val] == "boolean") {
-                    t[val] = new AutofixtureTS.BooleanSwitch().CreateAnonymous();
-                }
-                if(typeof t[val] == "object" && t[val] instanceof Array) {
-                }
-            });
-            return t;
+        Fixture.prototype.RepeatCount = function (value) {
+            this._repeatCount = value;
+            this._specimenFactory.RepeatCount(value);
+        };
+        Fixture.prototype.Engine = function () {
+            return this._engine;
+        };
+        Fixture.prototype.Customizations = function () {
+            return this._customizer.Builders();
+        };
+        Fixture.prototype.CreateAnonymous = function (type) {
+            return this._specimenFactory.CreateAnonymous(type);
         };
         Fixture.prototype.CreateMany = function (type) {
-            var arr = new Array();
-            for(var i = 0; i < 10; i++) {
-                arr.push(this.CreateAnonymous(type));
-            }
-            return arr;
-        };
-        Fixture.prototype.CreateNumber = function () {
-            return this.CreateNumberRange(1, 100);
-        };
-        Fixture.prototype.CreateNumberRange = function (min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        };
-        Fixture.prototype.CreateString = function (key) {
-            return new AutofixtureTS.StringGenerator().CreateAnonymous(key);
-        };
-        Fixture.prototype.CreateBoolean = function () {
-            return new AutofixtureTS.BooleanSwitch().CreateAnonymous();
+            return this._specimenFactory.CreateMany(type);
         };
         return Fixture;
     })();

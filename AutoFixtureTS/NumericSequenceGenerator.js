@@ -13,7 +13,7 @@ var AutofixtureTS;
         };
         NumericSequenceGenerator.prototype.Create = function (request) {
             if(typeof request != "number") {
-                return new AutofixtureTS.Kernel.NoSpecimen();
+                return new AutofixtureTS.Kernel.NoSpecimen(request);
             }
             return this.CreateAnonymous();
         };

@@ -6,24 +6,20 @@ module AutofixtureTS
 {
 
     // Class
-    export class StringGenerator implements AutofixtureTS.Kernel.ISpecimenBuilder  {                  
-        constructor () { }
+    export class StringGenerator implements AutofixtureTS.Kernel.ISpecimenBuilder  {       
 
-        public CreateAnonymous(key?:string): string {      
-            
-            if (key === "" || key === undefined)
-                return Types.Guid.MakeNew().ToString();
-            return key + "_" + Types.Guid.MakeNew().ToString();
+        public CreateAnonymous(prefix : string): string {                              
+            if(prefix != null && prefix != undefined && prefix != "")
+                return prefix + Types.Guid.MakeNew().ToString();
+            return Types.Guid.MakeNew().ToString();            
         }
 
         public Create(request: Object): Object
         { 
             if (typeof request != "string")
-            {
-                return new AutofixtureTS.Kernel.NoSpecimen(request);
-            }
+                return new AutofixtureTS.Kernel.NoSpecimen(request);            
 
-            return this.CreateAnonymous();
+            return this.CreateAnonymous(<string>request);
         }
     }
 

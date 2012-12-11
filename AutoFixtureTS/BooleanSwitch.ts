@@ -16,11 +16,9 @@ module AutofixtureTS
 
         public Create(request: Object): Object
         { 
-            if (typeof request != "boolean")
-            {
+            if (typeof request != "boolean")            
                 return new AutofixtureTS.Kernel.NoSpecimen(request);
-            }
-
+            
             return this.CreateAnonymous();
         }
     }

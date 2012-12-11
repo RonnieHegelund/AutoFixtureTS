@@ -17,10 +17,10 @@ module AutofixtureTS {
             this._engine = engine;
         }
 
-        public RepeatCount(value: number) {
+        public RepeatCount(value: number) : void {
             this._repeatCount = value;
         }
-
+            
         public CreateAnonymous(type: any): any {
             
             if(typeof type != "object" && typeof type != "function")

@@ -20,7 +20,7 @@ module AutofixtureTS.Kernel {
             var result = null; 
             if(typeof request == "function")
                 throw new Error("requet param is a function, this is not allowed");
-
+            
             this._builders.forEach(item => {
                 var tmp = item.Create(request);
                 

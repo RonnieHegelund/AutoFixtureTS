@@ -56,7 +56,6 @@
     <Content Include="TypeScript.Base.ts" />
     <TypeScriptCompile Include="Tests\StringGeneratorTests.ts" />
     <TypeScriptCompile Include="DefaultPrimitiveBuilders.ts" />
-    <TypeScriptCompile Include="NumberGenerator.ts" />
     <TypeScriptCompile Include="StringGenerator.ts" />
     <TypeScriptCompile Include="Tests\BooleanSwitchTest.ts" />
     <TypeScriptCompile Include="BooleanSwitch.ts" />
@@ -68,9 +67,7 @@
     <TypeScriptCompile Include="Fixture.ts" />
     <Content Include="Tests\CompositeSpecimenBuilderTests.ts" />
     <Content Include="Tests\jasmine-1.2.d.ts" />
-    <TypeScriptCompile Include="Tests\NumberGeneratorTests.ts" />
     <TypeScriptCompile Include="Tests\NoSpecimenTests.ts" />
-    <Content Include="Tests\kernel\DelegatingSpecimenBuilder.js" />
     <Content Include="Tests\kernel\DelegatingSpecimenBuilder.ts" />
     <Content Include="Tests\LoopTest.ts" />
     <Content Include="Tests\NumericSequenceGeneratorTests.ts" />

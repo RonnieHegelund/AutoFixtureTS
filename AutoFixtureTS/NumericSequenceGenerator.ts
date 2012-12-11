@@ -17,9 +17,8 @@ module AutofixtureTS
         public Create(request: Object): Object
         { 
             if (typeof request != "number")
-                return new AutofixtureTS.Kernel.NoSpecimen();
+                return new AutofixtureTS.Kernel.NoSpecimen(request);
             
-
             return this.CreateAnonymous();
         }
     }
