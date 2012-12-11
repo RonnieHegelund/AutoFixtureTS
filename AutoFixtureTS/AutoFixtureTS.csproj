@@ -42,6 +42,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Kernel\CompositeSpecimenBuilder.ts" />
+    <Content Include="Kernel\RangedNumberRequest.ts" />
+    <Content Include="NumericSequenceGenerator.ts" />
+    <Content Include="RangedNumberGenerator.ts" />
+    <Content Include="SpecimenFactory.ts" />
+    <Content Include="Tests\DefaultPrimitiveBuildersTests.ts" />
+    <Content Include="Tests\RangedNumberGeneratorTests.ts" />
+    <Content Include="Tests\RangedNumberRequestTest.ts" />
+    <Content Include="Tests\SpecimenFactoryTests.ts" />
+    <Content Include="Tests\VechicleTest.ts" />
+    <Content Include="Tests\Vehicle.ts" />
+    <Content Include="TypeScript.Base.ts" />
     <TypeScriptCompile Include="Tests\StringGeneratorTests.ts" />
     <TypeScriptCompile Include="DefaultPrimitiveBuilders.ts" />
     <TypeScriptCompile Include="NumberGenerator.ts" />
@@ -54,9 +66,14 @@
     <TypeScriptCompile Include="IFixture.ts" />
     <TypeScriptCompile Include="Tests\FixtureTest.ts" />
     <TypeScriptCompile Include="Fixture.ts" />
+    <Content Include="Tests\CompositeSpecimenBuilderTests.ts" />
     <Content Include="Tests\jasmine-1.2.d.ts" />
     <TypeScriptCompile Include="Tests\NumberGeneratorTests.ts" />
     <TypeScriptCompile Include="Tests\NoSpecimenTests.ts" />
+    <Content Include="Tests\kernel\DelegatingSpecimenBuilder.js" />
+    <Content Include="Tests\kernel\DelegatingSpecimenBuilder.ts" />
+    <Content Include="Tests\LoopTest.ts" />
+    <Content Include="Tests\NumericSequenceGeneratorTests.ts" />
     <Content Include="Tests\qunit-1.10.d.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
