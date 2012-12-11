@@ -1,3 +1,4 @@
+/// <reference path="../Kernel/RangedNumberRequest.ts" />
 /// <reference path="LoopTest.ts" />
 /// <reference path="kernel/DelegatingSpecimenBuilder.ts" />
 /// <reference path="../Fixture.ts" />
@@ -97,7 +98,7 @@ describe("AutofixtureTS.Fixture", function () {
         expect(result).toBeFalsy();
         // Teardown
             });
-    it("Create Anonymous boolean object Will true on first call", function () {
+    it("Create Anonymous boolean object Will return true on first call", function () {
         // Fixture setup
         var sut = new AutofixtureTS.Fixture();
         // Exercise system
@@ -164,6 +165,17 @@ describe("AutofixtureTS.Fixture", function () {
         }).Execute(2);
         // Verify outcome
         expect(result).toBe(2);
+        // Teardown
+            });
+    it("Create Anonymous NumberRequestRange object Will return correct result", function () {
+        // Fixture setup
+        var sut = new AutofixtureTS.Fixture();
+        var rangeRequest = new AutofixtureTS.Kernel.RangedNumberRequest(1, 10);
+        // Exercise system
+        var result = sut.CreateAnonymous(rangeRequest);
+        // Verify outcome
+        expect(result).toBeGreaterThan(0);
+        expect(result).toBeLessThan(11);
         // Teardown
             });
 });

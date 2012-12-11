@@ -1,6 +1,3 @@
-/// <reference path="../StringGenerator.ts" />
-/// <reference path="../Kernel/ISpecimenBuilder.ts" />
-/// <reference path="jasmine-1.2.d.ts" />
 var AutofixtureTSUnitTest;
 (function (AutofixtureTSUnitTest) {
     describe("AutofixtureTS.StringGenerator", function () {
@@ -18,3 +15,4 @@ var AutofixtureTSUnitTest;
         });
     });
 })(AutofixtureTSUnitTest || (AutofixtureTSUnitTest = {}));
+
