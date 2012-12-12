@@ -43,15 +43,16 @@ AutoFixtureTS makes it easier for TypeScript developers to do Test-Driven Develo
 
 <p>AutoFixtureTS can help by creating such Anonymous Variables for you. Here's a simple example:</p>
 
-<p><code>it("can create number Anonymous with number object expect correct result", () =&gt;{        
+<pre lang="//IntroductoryTest"><code>it("IntroductoryTest", () =&gt;{        
         // Fixture setup
-        var sut = new AutofixtureTS.Fixture();       
-        // Exercise system                         
-        var expected = sut.CreateAnonymous(Number());
+        var sut = new AutofixtureTS.Fixture();        
+        // Exercise system                
+        var expectedNumber = sut.CreateAnonymous(0);
         // Verify outcome
-        expect(expected).toBe(1);        
+        expect(expectedNumber).toBe(1)
         // Teardown
-    });</code></p>
+    });
+</code></pre>
 
 <p>This example illustrates the basic principle of AutoFixtureTS: It can create values of virtually any type without the need for you to explicitly define which values should be used. </p>
         </section>
