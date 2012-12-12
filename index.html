@@ -1,34 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
     <title>AutofixtureTS by RonnieHegelund</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>AutofixtureTS</h1>
-        <h2>AutoFixture for TypeScript</h2>
-        <a href="https://github.com/RonnieHegelund/AutoFixtureTS" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/RonnieHegelund/AutoFixtureTS">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/RonnieHegelund/AutoFixtureTS/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/RonnieHegelund/AutoFixtureTS/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>Project Description</h3>
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>AutofixtureTS</h1>
+          <p>AutoFixture for TypeScript</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/RonnieHegelund">RonnieHegelund</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h3>Project Description</h3>
 
 <p>Write maintainable unit tests, faster.</p>
 
@@ -37,43 +47,30 @@ AutoFixtureTS makes it easier for TypeScript developers to do Test-Driven Develo
 
 <h3>Overview</h3>
 
+<p>(Jump straight to the [CheatSheet] if you just want to see some code samples right away.)</p>
+
 <p>AutoFixtureTS is designed to make Test-Driven Development more productive and unit tests more refactoring-safe. It does so by removing the need for hand-coding anonymous variables as part of a test's Fixture Setup phase.</p>
 
 <p>When writing unit tests, you typically need to create some objects that represent the initial state of the test. Often, an API will force you to specify much more data than you really care about, so you frequently end up creating objects that has no influence on the test, simply to make the code compile.</p>
 
 <p>AutoFixtureTS can help by creating such Anonymous Variables for you. Here's a simple example:</p>
 
-<pre lang="//IntroductoryTest"><code>it("IntroductoryTest", () =&gt;{        
-        // Fixture setup
-        var sut = new AutofixtureTS.Fixture();        
-        // Exercise system                
-        var expectedNumber = sut.CreateAnonymous(0);
-        // Verify outcome
-        expect(expectedNumber).toBe(1)
-        // Teardown
-    });
-</code></pre>
+<div class="highlight"><pre><span class="nx">it</span><span class="p">(</span><span class="s2">"IntroductoryTest"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span><span class="p">{</span>        
+        <span class="c1">// Fixture setup</span>
+        <span class="kd">var</span> <span class="nx">sut</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AutofixtureTS</span><span class="p">.</span><span class="nx">Fixture</span><span class="p">();</span>        
+        <span class="c1">// Exercise system                </span>
+        <span class="kd">var</span> <span class="nx">expectedNumber</span> <span class="o">=</span> <span class="nx">sut</span><span class="p">.</span><span class="nx">CreateAnonymous</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="c1">// Verify outcome</span>
+        <span class="nx">expect</span><span class="p">(</span><span class="nx">expectedNumber</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1">// Teardown</span>
+    <span class="p">});</span>
+</pre></div>
 
 <p>This example illustrates the basic principle of AutoFixtureTS: It can create values of virtually any type without the need for you to explicitly define which values should be used. </p>
-        </section>
+      </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/RonnieHegelund/AutoFixtureTS/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/RonnieHegelund/AutoFixtureTS/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/RonnieHegelund/AutoFixtureTS"></a> is maintained by <a href="https://github.com/RonnieHegelund">RonnieHegelund</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
     </div>
-
-  
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
   </body>
 </html>
