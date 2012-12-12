@@ -1,4 +1,4 @@
-module AutofixtureTS.Kernel {
+module AutoFixtureTS.Kernel {
     // Class
     export class NoSpecimen {
         private _request: Object;

@@ -1,11 +1,11 @@
 /// <reference path="Kernel/NoSpecimen.ts" />
 /// <reference path="Kernel/ISpecimenBuilder.ts" />
 
-module AutofixtureTS
+module AutoFixtureTS
 {
 
     // Class
-    export class BooleanSwitch implements AutofixtureTS.Kernel.ISpecimenBuilder  {
+    export class BooleanSwitch implements AutoFixtureTS.Kernel.ISpecimenBuilder  {
             
         private b = false;
         
@@ -17,7 +17,7 @@ module AutofixtureTS
         public Create(request: Object): Object
         { 
             if (typeof request != "boolean")            
-                return new AutofixtureTS.Kernel.NoSpecimen(request);
+                return new AutoFixtureTS.Kernel.NoSpecimen(request);
             
             return this.CreateAnonymous();
         }

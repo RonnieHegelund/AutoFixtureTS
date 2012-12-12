@@ -1,6 +1,6 @@
 /// <reference path="../TypeScript.Base.ts" />
-var AutofixtureTS;
-(function (AutofixtureTS) {
+var AutoFixtureTS;
+(function (AutoFixtureTS) {
     (function (Kernel) {
         // Class
         var RangedNumberRequest = (function () {
@@ -34,6 +34,6 @@ var AutofixtureTS;
             return RangedNumberRequest;
         })();
         Kernel.RangedNumberRequest = RangedNumberRequest;        
-    })(AutofixtureTS.Kernel || (AutofixtureTS.Kernel = {}));
-    var Kernel = AutofixtureTS.Kernel;
-})(AutofixtureTS || (AutofixtureTS = {}));
+    })(AutoFixtureTS.Kernel || (AutoFixtureTS.Kernel = {}));
+    var Kernel = AutoFixtureTS.Kernel;
+})(AutoFixtureTS || (AutoFixtureTS = {}));

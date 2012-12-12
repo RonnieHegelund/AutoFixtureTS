@@ -4,22 +4,22 @@
 /// <reference path="NumericSequenceGenerator.ts" />
 /// <reference path="Kernel/ISpecimenBuilder.ts" />
 // Module
-module AutofixtureTS 
+module AutoFixtureTS 
 {
     // Class
     export class DefaultPrimitiveBuilders {
         
-        private _list : AutofixtureTS.Kernel.ISpecimenBuilder[];
+        private _list : AutoFixtureTS.Kernel.ISpecimenBuilder[];
 
         constructor () {
             this._list = new any[];
-            this._list.push(new AutofixtureTS.NumericSequenceGenerator());
-            this._list.push(new AutofixtureTS.RangedNumberGenerator());
-            this._list.push(new AutofixtureTS.StringGenerator());
-            this._list.push(new AutofixtureTS.BooleanSwitch());
+            this._list.push(new AutoFixtureTS.NumericSequenceGenerator());
+            this._list.push(new AutoFixtureTS.RangedNumberGenerator());
+            this._list.push(new AutoFixtureTS.StringGenerator());
+            this._list.push(new AutoFixtureTS.BooleanSwitch());
         } 
 
-        public GetSpecimens(): AutofixtureTS.Kernel.ISpecimenBuilder[] {
+        public GetSpecimens(): AutoFixtureTS.Kernel.ISpecimenBuilder[] {
             return this._list;
         }
     }

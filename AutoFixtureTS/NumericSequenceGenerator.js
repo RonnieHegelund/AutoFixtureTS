@@ -1,7 +1,7 @@
 /// <reference path="Kernel/NoSpecimen.ts" />
 /// <reference path="Kernel/ISpecimenBuilder.ts" />
-var AutofixtureTS;
-(function (AutofixtureTS) {
+var AutoFixtureTS;
+(function (AutoFixtureTS) {
     // Class
     var NumericSequenceGenerator = (function () {
         function NumericSequenceGenerator() {
@@ -13,11 +13,11 @@ var AutofixtureTS;
         };
         NumericSequenceGenerator.prototype.Create = function (request) {
             if(typeof request != "number") {
-                return new AutofixtureTS.Kernel.NoSpecimen(request);
+                return new AutoFixtureTS.Kernel.NoSpecimen(request);
             }
             return this.CreateAnonymous();
         };
         return NumericSequenceGenerator;
     })();
-    AutofixtureTS.NumericSequenceGenerator = NumericSequenceGenerator;    
-})(AutofixtureTS || (AutofixtureTS = {}));
+    AutoFixtureTS.NumericSequenceGenerator = NumericSequenceGenerator;    
+})(AutoFixtureTS || (AutoFixtureTS = {}));

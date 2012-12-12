@@ -1,4 +1,4 @@
-module AutofixtureTS.Kernel {
+module AutoFixtureTS.Kernel {
     
     export interface ISpecimenBuilder {
         /// <summary>

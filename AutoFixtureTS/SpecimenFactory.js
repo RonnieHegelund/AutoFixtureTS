@@ -7,8 +7,8 @@
 /// <reference path="BooleanSwitch.ts" />
 /// <reference path="DefaultPrimitiveBuilders.ts" />
 /// <reference path="NumericSequenceGenerator.ts" />
-var AutofixtureTS;
-(function (AutofixtureTS) {
+var AutoFixtureTS;
+(function (AutoFixtureTS) {
     var SpecimenFactory = (function () {
         function SpecimenFactory(engine) {
             this._repeatCount = 10;
@@ -30,7 +30,7 @@ var AutofixtureTS;
             }
             if(typeof type == "object") {
                 var t = this._engine.Create(type);
-                if(t instanceof AutofixtureTS.Kernel.NoSpecimen == false) {
+                if(t instanceof AutoFixtureTS.Kernel.NoSpecimen == false) {
                     return t;
                 } else {
                     t = type;
@@ -51,5 +51,5 @@ var AutofixtureTS;
         };
         return SpecimenFactory;
     })();
-    AutofixtureTS.SpecimenFactory = SpecimenFactory;    
-})(AutofixtureTS || (AutofixtureTS = {}));
+    AutoFixtureTS.SpecimenFactory = SpecimenFactory;    
+})(AutoFixtureTS || (AutoFixtureTS = {}));

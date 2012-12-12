@@ -1,5 +1,5 @@
-var AutofixtureTSUnitTest;
-(function (AutofixtureTSUnitTest) {
+var AutoFixtureTSUnitTest;
+(function (AutoFixtureTSUnitTest) {
     var LoopTest = (function () {
         function LoopTest(func) {
             this._func = func;
@@ -13,5 +13,5 @@ var AutofixtureTSUnitTest;
         };
         return LoopTest;
     })();
-    AutofixtureTSUnitTest.LoopTest = LoopTest;    
-})(AutofixtureTSUnitTest || (AutofixtureTSUnitTest = {}));
+    AutoFixtureTSUnitTest.LoopTest = LoopTest;    
+})(AutoFixtureTSUnitTest || (AutoFixtureTSUnitTest = {}));

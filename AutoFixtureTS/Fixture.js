@@ -3,18 +3,18 @@
 /// <reference path="Kernel/CompositeSpecimenBuilder.ts" />
 /// <reference path="SpecimenFactory.ts" />
 /// <reference path="Kernel/ISpecimenBuilder.ts" />
-var AutofixtureTS;
-(function (AutofixtureTS) {
+var AutoFixtureTS;
+(function (AutoFixtureTS) {
     var Fixture = (function () {
         function Fixture(engine) {
             this._repeatCount = 10;
-            var defaultPrimitiveBuilders = new AutofixtureTS.DefaultPrimitiveBuilders();
-            this._customizer = new AutofixtureTS.Kernel.CompositeSpecimenBuilder(defaultPrimitiveBuilders.GetSpecimens());
+            var defaultPrimitiveBuilders = new AutoFixtureTS.DefaultPrimitiveBuilders();
+            this._customizer = new AutoFixtureTS.Kernel.CompositeSpecimenBuilder(defaultPrimitiveBuilders.GetSpecimens());
             if(engine != null) {
                 this._engine = engine;
                 this._customizer.Builders().push(engine);
             }
-            this._specimenFactory = new AutofixtureTS.SpecimenFactory(this._customizer);
+            this._specimenFactory = new AutoFixtureTS.SpecimenFactory(this._customizer);
         }
         Fixture.prototype.RepeatCount = function (value) {
             this._repeatCount = value;
@@ -34,5 +34,5 @@ var AutofixtureTS;
         };
         return Fixture;
     })();
-    AutofixtureTS.Fixture = Fixture;    
-})(AutofixtureTS || (AutofixtureTS = {}));
+    AutoFixtureTS.Fixture = Fixture;    
+})(AutoFixtureTS || (AutoFixtureTS = {}));

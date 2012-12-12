@@ -1,4 +1,4 @@
-module AutofixtureTSUnitTest {
+module AutoFixtureTSUnitTest {
     export class LoopTest {
 
         private _func: any;

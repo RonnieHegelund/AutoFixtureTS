@@ -1,5 +1,5 @@
 /// <reference path="../TypeScript.Base.ts" />
-module AutofixtureTS.Kernel {
+module AutoFixtureTS.Kernel {
     // Class
     export class RangedNumberRequest implements TypeScript.Base.IEquatable {
         private _min: number;

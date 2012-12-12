@@ -1,6 +1,6 @@
 /// <reference path="../../Kernel/ISpecimenBuilder.ts" />
-var AutofixtureTSUnitTest;
-(function (AutofixtureTSUnitTest) {
+var AutoFixtureTSUnitTest;
+(function (AutoFixtureTSUnitTest) {
     (function (Kernel) {
         var DelegatingSpecimenBuilder = (function () {
             function DelegatingSpecimenBuilder() { }
@@ -10,6 +10,6 @@ var AutofixtureTSUnitTest;
             return DelegatingSpecimenBuilder;
         })();
         Kernel.DelegatingSpecimenBuilder = DelegatingSpecimenBuilder;        
-    })(AutofixtureTSUnitTest.Kernel || (AutofixtureTSUnitTest.Kernel = {}));
-    var Kernel = AutofixtureTSUnitTest.Kernel;
-})(AutofixtureTSUnitTest || (AutofixtureTSUnitTest = {}));
+    })(AutoFixtureTSUnitTest.Kernel || (AutoFixtureTSUnitTest.Kernel = {}));
+    var Kernel = AutoFixtureTSUnitTest.Kernel;
+})(AutoFixtureTSUnitTest || (AutoFixtureTSUnitTest = {}));

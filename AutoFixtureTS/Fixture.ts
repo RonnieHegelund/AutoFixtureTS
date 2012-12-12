@@ -4,24 +4,24 @@
 /// <reference path="SpecimenFactory.ts" />
 /// <reference path="Kernel/ISpecimenBuilder.ts" />
 
-module AutofixtureTS 
+module AutoFixtureTS 
 {
-    export class Fixture implements AutofixtureTS.IFixture {
-        private _specimenFactory: AutofixtureTS.SpecimenFactory;
-        private _customizer : AutofixtureTS.Kernel.CompositeSpecimenBuilder;
+    export class Fixture implements AutoFixtureTS.IFixture {
+        private _specimenFactory: AutoFixtureTS.SpecimenFactory;
+        private _customizer : AutoFixtureTS.Kernel.CompositeSpecimenBuilder;
         private _repeatCount = 10;
-        private _engine: AutofixtureTS.Kernel.ISpecimenBuilder;
+        private _engine: AutoFixtureTS.Kernel.ISpecimenBuilder;
                                         
-        constructor (engine? : AutofixtureTS.Kernel.ISpecimenBuilder) 
+        constructor (engine? : AutoFixtureTS.Kernel.ISpecimenBuilder) 
         { 
-            var defaultPrimitiveBuilders = new AutofixtureTS.DefaultPrimitiveBuilders();
-            this._customizer = new AutofixtureTS.Kernel.CompositeSpecimenBuilder(defaultPrimitiveBuilders.GetSpecimens());
+            var defaultPrimitiveBuilders = new AutoFixtureTS.DefaultPrimitiveBuilders();
+            this._customizer = new AutoFixtureTS.Kernel.CompositeSpecimenBuilder(defaultPrimitiveBuilders.GetSpecimens());
             if (engine != null) {
                 this._engine = engine;
                 this._customizer.Builders().push(engine);
             }
         
-            this._specimenFactory = new AutofixtureTS.SpecimenFactory(this._customizer);
+            this._specimenFactory = new AutoFixtureTS.SpecimenFactory(this._customizer);
         };
 
         public RepeatCount(value : number) : void {
@@ -29,9 +29,9 @@ module AutofixtureTS
             this._specimenFactory.RepeatCount(value);
         }
         
-        public Engine(): AutofixtureTS.Kernel.ISpecimenBuilder { return this._engine; }
+        public Engine(): AutoFixtureTS.Kernel.ISpecimenBuilder { return this._engine; }
                 
-        public Customizations() : AutofixtureTS.Kernel.ISpecimenBuilder[] {
+        public Customizations() : AutoFixtureTS.Kernel.ISpecimenBuilder[] {
             return this._customizer.Builders();
         }
                                        

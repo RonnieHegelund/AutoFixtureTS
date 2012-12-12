@@ -1,8 +1,8 @@
 /// <reference path="BaseTypes/Guid.ts" />
 /// <reference path="Kernel/NoSpecimen.ts" />
 /// <reference path="Kernel/ISpecimenBuilder.ts" />
-var AutofixtureTS;
-(function (AutofixtureTS) {
+var AutoFixtureTS;
+(function (AutoFixtureTS) {
     // Class
     var StringGenerator = (function () {
         function StringGenerator() { }
@@ -14,11 +14,11 @@ var AutofixtureTS;
         };
         StringGenerator.prototype.Create = function (request) {
             if(typeof request != "string") {
-                return new AutofixtureTS.Kernel.NoSpecimen(request);
+                return new AutoFixtureTS.Kernel.NoSpecimen(request);
             }
             return this.CreateAnonymous(request);
         };
         return StringGenerator;
     })();
-    AutofixtureTS.StringGenerator = StringGenerator;    
-})(AutofixtureTS || (AutofixtureTS = {}));
+    AutoFixtureTS.StringGenerator = StringGenerator;    
+})(AutoFixtureTS || (AutoFixtureTS = {}));

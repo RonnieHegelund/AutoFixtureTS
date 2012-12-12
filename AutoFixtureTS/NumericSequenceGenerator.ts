@@ -1,11 +1,11 @@
 /// <reference path="Kernel/NoSpecimen.ts" />
 /// <reference path="Kernel/ISpecimenBuilder.ts" />
 
-module AutofixtureTS
+module AutoFixtureTS
 {
 
     // Class
-    export class NumericSequenceGenerator implements AutofixtureTS.Kernel.ISpecimenBuilder  {
+    export class NumericSequenceGenerator implements AutoFixtureTS.Kernel.ISpecimenBuilder  {
             
         private _num = 0;
                 
@@ -17,7 +17,7 @@ module AutofixtureTS
         public Create(request: Object): Object
         { 
             if (typeof request != "number")
-                return new AutofixtureTS.Kernel.NoSpecimen(request);
+                return new AutoFixtureTS.Kernel.NoSpecimen(request);
             
             return this.CreateAnonymous();
         }

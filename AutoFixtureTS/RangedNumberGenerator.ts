@@ -2,12 +2,12 @@
 /// <reference path="Kernel/NoSpecimen.ts" />
 /// <reference path="Kernel/ISpecimenBuilder.ts" />
 
-module AutofixtureTS
+module AutoFixtureTS
 {
     // Class
-    export class RangedNumberGenerator implements AutofixtureTS.Kernel.ISpecimenBuilder  {
+    export class RangedNumberGenerator implements AutoFixtureTS.Kernel.ISpecimenBuilder  {
             
-        private _range: AutofixtureTS.Kernel.RangedNumberRequest;
+        private _range: AutoFixtureTS.Kernel.RangedNumberRequest;
                 
         private CreateAnonymous(): number {                        
             return Math.floor(Math.random() * (this._range.Max() - this._range.Min())) + this._range.Min();
@@ -15,12 +15,12 @@ module AutofixtureTS
 
         public Create(request: Object): Object
         {             
-            if (request instanceof AutofixtureTS.Kernel.RangedNumberRequest)
+            if (request instanceof AutoFixtureTS.Kernel.RangedNumberRequest)
             {               
-                this._range = <AutofixtureTS.Kernel.RangedNumberRequest>request;
+                this._range = <AutoFixtureTS.Kernel.RangedNumberRequest>request;
                 return this.CreateAnonymous(); 
             }
-            return new AutofixtureTS.Kernel.NoSpecimen(request);
+            return new AutoFixtureTS.Kernel.NoSpecimen(request);
         }
     }
 

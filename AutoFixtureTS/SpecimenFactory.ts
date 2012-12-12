@@ -8,12 +8,12 @@
 /// <reference path="DefaultPrimitiveBuilders.ts" />
 /// <reference path="NumericSequenceGenerator.ts" />
 
-module AutofixtureTS {
+module AutoFixtureTS {
     export class SpecimenFactory {
-        private _engine:AutofixtureTS.Kernel.CompositeSpecimenBuilder;
+        private _engine:AutoFixtureTS.Kernel.CompositeSpecimenBuilder;
         private _repeatCount = 10;
 
-        constructor (engine : AutofixtureTS.Kernel.CompositeSpecimenBuilder ) {
+        constructor (engine : AutoFixtureTS.Kernel.CompositeSpecimenBuilder ) {
             this._engine = engine;
         }
 
@@ -34,7 +34,7 @@ module AutofixtureTS {
                         
             if (typeof type == "object") {
                 var t = this._engine.Create(type);
-                if (t instanceof AutofixtureTS.Kernel.NoSpecimen == false) {
+                if (t instanceof AutoFixtureTS.Kernel.NoSpecimen == false) {
                     return t;
                 } else {
                     t = type;

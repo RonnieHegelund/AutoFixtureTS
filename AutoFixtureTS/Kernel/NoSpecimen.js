@@ -1,5 +1,5 @@
-var AutofixtureTS;
-(function (AutofixtureTS) {
+var AutoFixtureTS;
+(function (AutoFixtureTS) {
     (function (Kernel) {
         // Class
         var NoSpecimen = (function () {
@@ -13,6 +13,6 @@ var AutofixtureTS;
             return NoSpecimen;
         })();
         Kernel.NoSpecimen = NoSpecimen;        
-    })(AutofixtureTS.Kernel || (AutofixtureTS.Kernel = {}));
-    var Kernel = AutofixtureTS.Kernel;
-})(AutofixtureTS || (AutofixtureTS = {}));
+    })(AutoFixtureTS.Kernel || (AutoFixtureTS.Kernel = {}));
+    var Kernel = AutoFixtureTS.Kernel;
+})(AutoFixtureTS || (AutoFixtureTS = {}));

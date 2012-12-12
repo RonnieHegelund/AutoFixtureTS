@@ -1,7 +1,7 @@
 /// <reference path="NoSpecimen.ts" />
 /// <reference path="ISpecimenBuilder.ts" />
-var AutofixtureTS;
-(function (AutofixtureTS) {
+var AutoFixtureTS;
+(function (AutoFixtureTS) {
     (function (Kernel) {
         var CompositeSpecimenBuilder = (function () {
             function CompositeSpecimenBuilder(builders) {
@@ -19,19 +19,19 @@ var AutofixtureTS;
                 }
                 this._builders.forEach(function (item) {
                     var tmp = item.Create(request);
-                    if(tmp instanceof AutofixtureTS.Kernel.NoSpecimen == false) {
+                    if(tmp instanceof AutoFixtureTS.Kernel.NoSpecimen == false) {
                         result = tmp;
                         return tmp;
                     }
                 });
                 if(result == null) {
-                    return new AutofixtureTS.Kernel.NoSpecimen();
+                    return new AutoFixtureTS.Kernel.NoSpecimen();
                 }
                 return result;
             };
             return CompositeSpecimenBuilder;
         })();
         Kernel.CompositeSpecimenBuilder = CompositeSpecimenBuilder;        
-    })(AutofixtureTS.Kernel || (AutofixtureTS.Kernel = {}));
-    var Kernel = AutofixtureTS.Kernel;
-})(AutofixtureTS || (AutofixtureTS = {}));
+    })(AutoFixtureTS.Kernel || (AutoFixtureTS.Kernel = {}));
+    var Kernel = AutoFixtureTS.Kernel;
+})(AutoFixtureTS || (AutoFixtureTS = {}));

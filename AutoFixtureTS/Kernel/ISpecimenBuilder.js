@@ -1,3 +1,3 @@
-var AutofixtureTS;
-(function (AutofixtureTS) {
-    })(AutofixtureTS || (AutofixtureTS = {}));
+var AutoFixtureTS;
+(function (AutoFixtureTS) {
+    })(AutoFixtureTS || (AutoFixtureTS = {}));

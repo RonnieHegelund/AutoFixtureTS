@@ -1,6 +1,6 @@
 /// <reference path="NoSpecimen.ts" />
 /// <reference path="ISpecimenBuilder.ts" />
-module AutofixtureTS.Kernel {
+module AutoFixtureTS.Kernel {
     export class CompositeSpecimenBuilder implements Kernel.ISpecimenBuilder {
 
         private _builders: Kernel.ISpecimenBuilder[];
@@ -24,14 +24,14 @@ module AutofixtureTS.Kernel {
             this._builders.forEach(item => {
                 var tmp = item.Create(request);
                 
-                if (tmp instanceof AutofixtureTS.Kernel.NoSpecimen == false) {
+                if (tmp instanceof AutoFixtureTS.Kernel.NoSpecimen == false) {
                     result = tmp;
                     return tmp;
                 }                
             });
 
             if(result == null)
-                return new AutofixtureTS.Kernel.NoSpecimen();
+                return new AutoFixtureTS.Kernel.NoSpecimen();
             return result;
         }        
     }
