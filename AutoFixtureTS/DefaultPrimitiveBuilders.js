@@ -1,3 +1,4 @@
+/// <reference path="CurrentDateGenerator.ts" />
 /// <reference path="BooleanSwitch.ts" />
 /// <reference path="StringGenerator.ts" />
 /// <reference path="RangedNumberGenerator.ts" />
@@ -14,6 +15,7 @@ var AutoFixtureTS;
             this._list.push(new AutoFixtureTS.RangedNumberGenerator());
             this._list.push(new AutoFixtureTS.StringGenerator());
             this._list.push(new AutoFixtureTS.BooleanSwitch());
+            this._list.push(new AutoFixtureTS.CurrentDateGenerator());
         }
         DefaultPrimitiveBuilders.prototype.GetSpecimens = function () {
             return this._list;

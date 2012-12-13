@@ -1,15 +1,15 @@
 /// <reference path="../DefaultPrimitiveBuilders.ts" />
 /// <reference path="jasmine-1.2.d.ts" />
-var AutofixtureTSUnitTest;
-(function (AutofixtureTSUnitTest) {
-    describe("AutofixtureTS.DefaultPrimitiveBuildersTests", function () {
+var AutoFixtureTSUnitTest;
+(function (AutoFixtureTSUnitTest) {
+    describe("AutoFixtureTS.DefaultPrimitiveBuildersTests", function () {
         it("Create DefaultPrimitiveBuilders not null", function () {
-            var sut = new AutofixtureTS.DefaultPrimitiveBuilders();
+            var sut = new AutoFixtureTS.DefaultPrimitiveBuilders();
             expect(sut).not.toBeNull();
         });
         it("Create DefaultPrimitiveBuilders length correct ", function () {
-            var sut = new AutofixtureTS.DefaultPrimitiveBuilders();
-            expect(sut.GetSpecimens().length).toBe(4);
+            var sut = new AutoFixtureTS.DefaultPrimitiveBuilders();
+            expect(sut.GetSpecimens().length).toBeGreaterThan(0);
         });
     });
-})(AutofixtureTSUnitTest || (AutofixtureTSUnitTest = {}));
+})(AutoFixtureTSUnitTest || (AutoFixtureTSUnitTest = {}));

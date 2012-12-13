@@ -42,11 +42,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="CurrentDateGenerator.ts" />
     <Content Include="Kernel\CompositeSpecimenBuilder.ts" />
     <Content Include="Kernel\RangedNumberRequest.ts" />
     <Content Include="NumericSequenceGenerator.ts" />
     <Content Include="RangedNumberGenerator.ts" />
     <Content Include="SpecimenFactory.ts" />
+    <TypeScriptCompile Include="Tests\CurrentDateGeneratorTests.ts" />
     <Content Include="Tests\DefaultPrimitiveBuildersTests.ts" />
     <Content Include="Tests\RangedNumberGeneratorTests.ts" />
     <Content Include="Tests\RangedNumberRequestTest.ts" />

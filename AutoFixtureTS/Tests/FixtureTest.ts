@@ -194,5 +194,14 @@ describe("AutoFixtureTS.Fixture", () => {
         expect(result).toBeLessThan(11);
         // Teardown
     });
-            
+   
+    it("can create Anonymous date ", () =>{
+        // Fixture setup
+        var sut = new AutoFixtureTS.Fixture();
+        var date = <Date>sut.CreateAnonymous(new Date());                        
+        var d = new Date();                         
+        // Verify outcome
+        expect(date.getTime()).toBeLessThan(d.getTime());
+        // Teardown            
+    });         
 });
