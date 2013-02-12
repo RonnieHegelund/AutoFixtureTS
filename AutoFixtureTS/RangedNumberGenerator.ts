@@ -23,6 +23,5 @@ module AutoFixtureTS
             return new AutoFixtureTS.Kernel.NoSpecimen(request);
         }
     }
-
 }
 
