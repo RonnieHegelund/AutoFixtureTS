@@ -1,6 +1,6 @@
-/// <reference path="../../Kernel/ISpecimenBuilder.ts" />
 var AutoFixtureTSUnitTest;
 (function (AutoFixtureTSUnitTest) {
+    /// <reference path="../../Kernel/ISpecimenBuilder.ts" />
     (function (Kernel) {
         var DelegatingSpecimenBuilder = (function () {
             function DelegatingSpecimenBuilder() { }
@@ -13,3 +13,4 @@ var AutoFixtureTSUnitTest;
     })(AutoFixtureTSUnitTest.Kernel || (AutoFixtureTSUnitTest.Kernel = {}));
     var Kernel = AutoFixtureTSUnitTest.Kernel;
 })(AutoFixtureTSUnitTest || (AutoFixtureTSUnitTest = {}));
+//@ sourceMappingURL=DelegatingSpecimenBuilder.js.map
