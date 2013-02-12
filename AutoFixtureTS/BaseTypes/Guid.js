@@ -7,9 +7,9 @@ var Types;
         }
         Guid.prototype.ToString = function () {
             return this.guid;
-        }// Static member
-        ;
-        Guid.MakeNew = function MakeNew() {
+        };
+        Guid.MakeNew = // Static member
+        function MakeNew() {
             var result;
             var i;
             var j;
@@ -22,8 +22,9 @@ var Types;
                 result = result + i;
             }
             return new Guid(result);
-        }
+        };
         return Guid;
     })();
     Types.Guid = Guid;    
 })(Types || (Types = {}));
+//@ sourceMappingURL=Guid.js.map

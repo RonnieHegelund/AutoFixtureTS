@@ -8,9 +8,9 @@ var TypeScript;
             }
             Guid.prototype.ToString = function () {
                 return this.guid;
-            }// Static member
-            ;
-            Guid.MakeNew = function MakeNew() {
+            };
+            Guid.MakeNew = // Static member
+            function MakeNew() {
                 var result;
                 var i;
                 var j;
@@ -23,7 +23,7 @@ var TypeScript;
                     result = result + i;
                 }
                 return new Guid(result);
-            }
+            };
             Guid.prototype.Equals = function (other) {
                 if(other == null) {
                     return false;
@@ -39,3 +39,4 @@ var TypeScript;
     })(TypeScript.Base || (TypeScript.Base = {}));
     var Base = TypeScript.Base;
 })(TypeScript || (TypeScript = {}));
+//@ sourceMappingURL=TypeScript.Base.js.map

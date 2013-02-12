@@ -20,3 +20,4 @@ var AutoFixtureTS;
     })();
     AutoFixtureTS.RangedNumberGenerator = RangedNumberGenerator;    
 })(AutoFixtureTS || (AutoFixtureTS = {}));
+//@ sourceMappingURL=RangedNumberGenerator.js.map

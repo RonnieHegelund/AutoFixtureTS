@@ -53,3 +53,4 @@ var AutoFixtureTS;
     })();
     AutoFixtureTS.SpecimenFactory = SpecimenFactory;    
 })(AutoFixtureTS || (AutoFixtureTS = {}));
+//@ sourceMappingURL=SpecimenFactory.js.map

@@ -17,3 +17,4 @@ var AutoFixtureDocumentationTest;
     })(AutoFixtureDocumentationTest.Simple || (AutoFixtureDocumentationTest.Simple = {}));
     var Simple = AutoFixtureDocumentationTest.Simple;
 })(AutoFixtureDocumentationTest || (AutoFixtureDocumentationTest = {}));
+//@ sourceMappingURL=Vehicle.js.map

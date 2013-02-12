@@ -16,3 +16,4 @@ var AutoFixtureTS;
     })(AutoFixtureTS.Kernel || (AutoFixtureTS.Kernel = {}));
     var Kernel = AutoFixtureTS.Kernel;
 })(AutoFixtureTS || (AutoFixtureTS = {}));
+//@ sourceMappingURL=NoSpecimen.js.map

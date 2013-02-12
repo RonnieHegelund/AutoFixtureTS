@@ -1,7 +1,7 @@
-/// <reference path="NoSpecimen.ts" />
-/// <reference path="ISpecimenBuilder.ts" />
 var AutoFixtureTS;
 (function (AutoFixtureTS) {
+    /// <reference path="NoSpecimen.ts" />
+    /// <reference path="ISpecimenBuilder.ts" />
     (function (Kernel) {
         var CompositeSpecimenBuilder = (function () {
             function CompositeSpecimenBuilder(builders) {
@@ -35,3 +35,4 @@ var AutoFixtureTS;
     })(AutoFixtureTS.Kernel || (AutoFixtureTS.Kernel = {}));
     var Kernel = AutoFixtureTS.Kernel;
 })(AutoFixtureTS || (AutoFixtureTS = {}));
+//@ sourceMappingURL=CompositeSpecimenBuilder.js.map

@@ -21,3 +21,4 @@ var AutoFixtureTS;
     })();
     AutoFixtureTS.BooleanSwitch = BooleanSwitch;    
 })(AutoFixtureTS || (AutoFixtureTS = {}));
+//@ sourceMappingURL=BooleanSwitch.js.map

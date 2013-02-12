@@ -18,3 +18,4 @@ var AutoFixtureTS;
     })();
     AutoFixtureTS.CurrentDateGenerator = CurrentDateGenerator;    
 })(AutoFixtureTS || (AutoFixtureTS = {}));
+//@ sourceMappingURL=CurrentDateGenerator.js.map

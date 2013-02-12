@@ -1,6 +1,6 @@
-/// <reference path="../TypeScript.Base.ts" />
 var AutoFixtureTS;
 (function (AutoFixtureTS) {
+    /// <reference path="../TypeScript.Base.ts" />
     (function (Kernel) {
         // Class
         var RangedNumberRequest = (function () {
@@ -37,3 +37,4 @@ var AutoFixtureTS;
     })(AutoFixtureTS.Kernel || (AutoFixtureTS.Kernel = {}));
     var Kernel = AutoFixtureTS.Kernel;
 })(AutoFixtureTS || (AutoFixtureTS = {}));
+//@ sourceMappingURL=RangedNumberRequest.js.map

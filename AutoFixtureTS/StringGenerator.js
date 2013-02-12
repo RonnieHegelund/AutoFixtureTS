@@ -22,3 +22,4 @@ var AutoFixtureTS;
     })();
     AutoFixtureTS.StringGenerator = StringGenerator;    
 })(AutoFixtureTS || (AutoFixtureTS = {}));
+//@ sourceMappingURL=StringGenerator.js.map

@@ -19,8 +19,7 @@ module AutoFixtureTS
             if (engine != null) {
                 this._engine = engine;
                 this._customizer.Builders().push(engine);
-            }
-        
+            }        
             this._specimenFactory = new AutoFixtureTS.SpecimenFactory(this._customizer);
         };
 

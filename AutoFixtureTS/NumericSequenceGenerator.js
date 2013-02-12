@@ -21,3 +21,4 @@ var AutoFixtureTS;
     })();
     AutoFixtureTS.NumericSequenceGenerator = NumericSequenceGenerator;    
 })(AutoFixtureTS || (AutoFixtureTS = {}));
+//@ sourceMappingURL=NumericSequenceGenerator.js.map

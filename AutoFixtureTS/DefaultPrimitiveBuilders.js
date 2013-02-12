@@ -24,3 +24,4 @@ var AutoFixtureTS;
     })();
     AutoFixtureTS.DefaultPrimitiveBuilders = DefaultPrimitiveBuilders;    
 })(AutoFixtureTS || (AutoFixtureTS = {}));
+//@ sourceMappingURL=DefaultPrimitiveBuilders.js.map

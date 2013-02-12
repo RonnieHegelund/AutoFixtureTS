@@ -36,3 +36,4 @@ var AutoFixtureTS;
     })();
     AutoFixtureTS.Fixture = Fixture;    
 })(AutoFixtureTS || (AutoFixtureTS = {}));
+//@ sourceMappingURL=Fixture.js.map
