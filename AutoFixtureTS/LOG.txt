@@ -1,6 +1,0 @@
-System.ArgumentOutOfRangeException: Length cannot be less than zero.
-Parameter name: length
-   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at TodoGlyphTest.BuildData.ExtractInstances(String s)
-   at TodoGlyphTest.BuildData.UpdateFile()
