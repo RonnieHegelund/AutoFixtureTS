@@ -10,7 +10,7 @@ describe("AutoFixtureTS.Fixture", () => {
     it("Initialized With Engine Sut Has Correct Engine", () =>{
     // Fixture setup
         var expectedEngine = new AutoFixtureTSUnitTest.Kernel.DelegatingSpecimenBuilder();
-        var sut = new AutoFixtureTS.Fixture(expectedEngine);        
+        var sut = new AutoFixtureTS.Fixture(expectedEngine);
         // Exercise system
         var result = sut.Engine();
         // Verify outcome
@@ -46,7 +46,7 @@ describe("AutoFixtureTS.Fixture", () => {
         // Fixture setup        
         var sut = new AutoFixtureTS.Fixture();
         var builder = new AutoFixtureTSUnitTest.Kernel.DelegatingSpecimenBuilder();
-        // Exercise system                
+        // Exercise system
         sut.Customizations().push(builder);
         // Verify outcome
         expect(sut.Customizations().some((item) => item === builder)).toBeTruthy();
@@ -67,7 +67,7 @@ describe("AutoFixtureTS.Fixture", () => {
         // Fixture setup
         var expectedText = "Anonymous text";
         var sut = new AutoFixtureTS.Fixture();
-        // Exercise system                
+        // Exercise system
         var result = sut.CreateAnonymous(expectedText);
         // Verify outcome
         expect(result).toContain(expectedText);
@@ -77,7 +77,7 @@ describe("AutoFixtureTS.Fixture", () => {
     
     it("Create Anonymous with empty string will return guid string ", () =>{
         var sut = new AutoFixtureTS.Fixture();
-        var expected = sut.CreateAnonymous("");
+        var expected : string = sut.CreateAnonymous<string>("");
         var regex = "^(\{){0,1}[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}(\}){0,1}$";
     
         expect(expected).toMatch(regex);
@@ -186,7 +186,7 @@ describe("AutoFixtureTS.Fixture", () => {
     it("Create Anonymous NumberRequestRange object Will return correct result", () =>{        // Fixture setup
         var sut = new AutoFixtureTS.Fixture();
         var rangeRequest = new AutoFixtureTS.Kernel.RangedNumberRequest(1, 10);
-        // Exercise system                
+        // Exercise system
         var result = sut.CreateAnonymous(rangeRequest);
         // Verify outcome
         expect(result).toBeGreaterThan(0);
@@ -194,13 +194,4 @@ describe("AutoFixtureTS.Fixture", () => {
         // Teardown
     });
    
-    it("can create Anonymous date ", () =>{
-        // Fixture setup
-        var sut = new AutoFixtureTS.Fixture();
-        var date = <Date>sut.CreateAnonymous(new Date());
-        var d = new Date();
-        // Verify outcome
-        expect(date.getTime()).toBeLessThan(d.getTime());
-        // Teardown
-    });
 });

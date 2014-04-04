@@ -35,7 +35,7 @@ module AutoFixtureTS
             return this._customizer.Builders();
         }
                                        
-        public CreateAnonymous(type: any): any {
+        public CreateAnonymous<T>(type: any): T {
             return this._specimenFactory.CreateAnonymous(type);
         }
 

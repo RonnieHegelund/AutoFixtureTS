@@ -20,7 +20,7 @@ module AutoFixtureTS {
         public RepeatCount(value: number) : void {
             this._repeatCount = value;
         }
-            
+
         public CreateAnonymous(type: any): any {
             
             if(typeof type != "object" && typeof type != "function")
