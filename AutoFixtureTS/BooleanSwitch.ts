@@ -9,14 +9,14 @@ module AutoFixtureTS
             
         private b = false;
         
-        public CreateAnonymous(): bool {
+        public CreateAnonymous(): boolean {
             this.b = !this.b;
             return this.b;
         }
 
         public Create(request: Object): Object
         { 
-            if (typeof request != "boolean")            
+            if (typeof request != "boolean")
                 return new AutoFixtureTS.Kernel.NoSpecimen(request);
             
             return this.CreateAnonymous();

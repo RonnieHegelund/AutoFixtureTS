@@ -52,7 +52,7 @@ module AutoFixtureTSUnitTest {
         });
     
         it("Create With Boolean Request Will Return Correct Result On Second Call",  ()=> {
-            var booleanRequest = false;                                    
+            var booleanRequest = false;
             var sut = new AutoFixtureTS.BooleanSwitch();            
            
             sut.Create(booleanRequest);

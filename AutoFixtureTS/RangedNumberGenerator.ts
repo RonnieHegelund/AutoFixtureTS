@@ -5,11 +5,11 @@
 module AutoFixtureTS
 {
     // Class
-    export class RangedNumberGenerator implements AutoFixtureTS.Kernel.ISpecimenBuilder  {
+    export class RangedNumberGenerator implements AutoFixtureTS.Kernel.ISpecimenBuilder {
             
         private _range: AutoFixtureTS.Kernel.RangedNumberRequest;
                 
-        private CreateAnonymous(): number {                        
+        private CreateAnonymous(): number {
             return Math.floor(Math.random() * (this._range.Max() - this._range.Min())) + this._range.Min();
         }
 

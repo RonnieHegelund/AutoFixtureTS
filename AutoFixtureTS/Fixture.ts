@@ -15,14 +15,14 @@ module AutoFixtureTS
         constructor (engine? : AutoFixtureTS.Kernel.ISpecimenBuilder) 
         { 
             var defaultPrimitiveBuilders = new AutoFixtureTS.DefaultPrimitiveBuilders();
-            this._customizer = new AutoFixtureTS.Kernel.CompositeSpecimenBuilder(defaultPrimitiveBuilders.GetSpecimens());
+            this._customizer = new AutoFixtureTS.Kernel.CompositeSpecimenBuilder(defaultPrimitiveBuilders.getSpecimens());
             if (engine != null) {
                 this._engine = engine;
                 this._customizer.Builders().push(engine);
             }
-        
+
             this._specimenFactory = new AutoFixtureTS.SpecimenFactory(this._customizer);
-        };
+        }
 
         public RepeatCount(value : number) : void {
             this._repeatCount = value;
@@ -39,7 +39,7 @@ module AutoFixtureTS
             return this._specimenFactory.CreateAnonymous(type);
         }
 
-        public CreateMany(type: any) : any[] {
+        public CreateMany(type: any) : Array<any> {
             return this._specimenFactory.CreateMany(type);
         }
     }

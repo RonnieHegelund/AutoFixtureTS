@@ -20,7 +20,7 @@ module AutoFixtureTS.Kernel {
             this._max = maximum;
         }
       
-        public Equals(other : any): bool {
+        public Equals(other : any): boolean {
             if (other == null) 
                 return false;
             if(other instanceof RangedNumberRequest == false)

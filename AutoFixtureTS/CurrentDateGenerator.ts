@@ -5,12 +5,12 @@
 module AutoFixtureTS
 {
     // Class
-    export class CurrentDateGenerator implements AutoFixtureTS.Kernel.ISpecimenBuilder  {
-                    
+    export class CurrentDateGenerator implements AutoFixtureTS.Kernel.ISpecimenBuilder {
+
         public Create(request: Object): Object
-        {             
+        {
             if (request instanceof Date == false)
-                return new AutoFixtureTS.Kernel.NoSpecimen(request);         
+                return new AutoFixtureTS.Kernel.NoSpecimen(request);
                             
             var tmpDate = new Date();
             var now = new Date(tmpDate.getFullYear(), 
@@ -19,11 +19,9 @@ module AutoFixtureTS
                 tmpDate.getHours(),
                 tmpDate.getMinutes(),
                 tmpDate.getSeconds(),
-                tmpDate.getMilliseconds());                
-            
-            return now;                        
+                tmpDate.getMilliseconds());
+            return now;
         }
     }
-
 }
 

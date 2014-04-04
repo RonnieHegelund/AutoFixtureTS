@@ -10,10 +10,10 @@ module AutoFixtureTS
     // Class
     export class DefaultPrimitiveBuilders {
         
-        private _list : AutoFixtureTS.Kernel.ISpecimenBuilder[];
+        private _list : Array<AutoFixtureTS.Kernel.ISpecimenBuilder>;
 
         constructor () {
-            this._list = new any[];
+            this._list = new Array<AutoFixtureTS.Kernel.ISpecimenBuilder>();
             this._list.push(new AutoFixtureTS.NumericSequenceGenerator());
             this._list.push(new AutoFixtureTS.RangedNumberGenerator());
             this._list.push(new AutoFixtureTS.StringGenerator());
@@ -21,7 +21,7 @@ module AutoFixtureTS
             this._list.push(new AutoFixtureTS.CurrentDateGenerator());
         } 
 
-        public GetSpecimens(): AutoFixtureTS.Kernel.ISpecimenBuilder[] {
+        public getSpecimens(): Array<AutoFixtureTS.Kernel.ISpecimenBuilder> {
             return this._list;
         }
     }

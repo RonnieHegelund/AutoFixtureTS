@@ -10,7 +10,7 @@
 
 module AutoFixtureTS {
     export class SpecimenFactory {
-        private _engine:AutoFixtureTS.Kernel.CompositeSpecimenBuilder;
+        private _engine : AutoFixtureTS.Kernel.CompositeSpecimenBuilder;
         private _repeatCount = 10;
 
         constructor (engine : AutoFixtureTS.Kernel.CompositeSpecimenBuilder ) {
@@ -26,7 +26,7 @@ module AutoFixtureTS {
             if(typeof type != "object" && typeof type != "function")
                 return this._engine.Create(type);
             
-            if (typeof type == "function" && type() != null)                
+            if (typeof type == "function" && type() != null)
                 return this._engine.Create(type());
             
             if (typeof type == "function" && type() == null)
@@ -43,16 +43,16 @@ module AutoFixtureTS {
                     });
                 }
                 return t;
-            }            
-            return;            
+            }
+            return this._engine.Create(type);
         }
        
-        public CreateMany(type: any) : any[] {
-            var arr = new any[];
+        public CreateMany(type: any) : Array<any> {
+            var arr = new Array<any>();
             for (var i = 0; i < this._repeatCount; i++)
             {
                 arr.push(this.CreateAnonymous(type));
-            }                        
+            }
             return arr;
         }
     }    

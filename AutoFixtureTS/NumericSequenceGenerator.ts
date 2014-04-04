@@ -5,11 +5,11 @@ module AutoFixtureTS
 {
 
     // Class
-    export class NumericSequenceGenerator implements AutoFixtureTS.Kernel.ISpecimenBuilder  {
+    export class NumericSequenceGenerator implements AutoFixtureTS.Kernel.ISpecimenBuilder {
             
         private _num = 0;
                 
-        public CreateAnonymous(): number {                        
+        public CreateAnonymous(): number {
             this._num += 1;
             return this._num;
         }

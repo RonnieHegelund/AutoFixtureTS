@@ -3,12 +3,12 @@
 module AutoFixtureTS.Kernel {
     export class CompositeSpecimenBuilder implements Kernel.ISpecimenBuilder {
 
-        private _builders: Kernel.ISpecimenBuilder[];
+        private _builders: Array<Kernel.ISpecimenBuilder>;
         
-        constructor (builders : Kernel.ISpecimenBuilder[])
+        constructor(builders: Array<Kernel.ISpecimenBuilder>)
         { 
             if (builders != null)
-                this._builders = builders;            
+                this._builders = builders;
         }
 
         public Builders() : Kernel.ISpecimenBuilder[] {
@@ -27,12 +27,13 @@ module AutoFixtureTS.Kernel {
                 if (tmp instanceof AutoFixtureTS.Kernel.NoSpecimen == false) {
                     result = tmp;
                     return tmp;
-                }                
+                }
+                return tmp;
             });
 
             if(result == null)
                 return new AutoFixtureTS.Kernel.NoSpecimen();
             return result;
-        }        
+        }
     }
 }

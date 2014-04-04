@@ -1,6 +1,6 @@
 module TypeScript.Base {
     export interface IEquatable {
-        Equals(other:any): bool;
+        Equals(other:any): boolean;
     }
 
     export class Guid implements IEquatable {
@@ -30,7 +30,7 @@ module TypeScript.Base {
             return new Guid(result);
         }
 
-        public Equals(other: Guid): bool {
+        public Equals(other: Guid): boolean {
             if (other == null) 
                 return false;
             if(other instanceof Guid == false)

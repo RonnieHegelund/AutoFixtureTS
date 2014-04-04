@@ -9,11 +9,11 @@ module AutoFixtureTSUnitTest {
         it("can create Anonymous date ", () =>{
             // Fixture setup
             var sut = new AutoFixtureTS.CurrentDateGenerator();
-            var date = <Date>sut.Create(new Date());                        
-            var d = new Date();                         
+            var date = <Date>sut.Create(new Date());
+            var d = new Date();
             // Verify outcome
             expect(date.getTime()).toBeLessThan(d.getTime());
-            // Teardown            
+            // Teardown
         });
     });
 }
