@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.30324.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E3320142-47B2-4FE7-AAE2-F066B9407739}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFixtureTS", "AutoFixtureTS.csproj", "{85214386-C7D6-4445-AE92-8908EBF8862E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{99B69502-E26A-4183-BE9C-9DB00F045223}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -14,16 +12,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{99B695
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFixtureTS", "AutoFixtureTS.csproj", "{221A63C5-EA6B-4BD8-8FE7-C937F3219547}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{85214386-C7D6-4445-AE92-8908EBF8862E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85214386-C7D6-4445-AE92-8908EBF8862E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85214386-C7D6-4445-AE92-8908EBF8862E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85214386-C7D6-4445-AE92-8908EBF8862E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{221A63C5-EA6B-4BD8-8FE7-C937F3219547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{221A63C5-EA6B-4BD8-8FE7-C937F3219547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{221A63C5-EA6B-4BD8-8FE7-C937F3219547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{221A63C5-EA6B-4BD8-8FE7-C937F3219547}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
